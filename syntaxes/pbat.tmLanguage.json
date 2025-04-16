@@ -28,7 +28,7 @@
 		},
 		{
 			"name": "keyword.control.pbat",
-			"match": "\\b(SET|GOTO|RETURN|ADDWIDGET|EXIT|IF|ENDIF|MESSAGE|RRM|REDIRFILE|LOADEXEC|COPY)\\b"
+			"match": "\\b(SET|GOTO|RETURN|ADDWIDGET|EXIT|IF|ELSEIF|ELSE|ENDIF|MESSAGE|RRM|REDIRFILE|LOADEXEC|COPY)\\b"
 		},
 		{
 			"name": "keyword.other",
