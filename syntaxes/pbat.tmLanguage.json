@@ -8,12 +8,44 @@
 			"end": "\n"
 		},
 		{
+			"name": "string.quoted.double.pbat",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "variable.name",
+					"match": "\\$.*?\\$"
+				}
+			]
+		},
+		{
 			"name": "keyword.control.pbat",
 			"match": "\\b(SET|GOTO|RETURN|ADDWIDGET|EXIT|IF|ENDIF|MESSAGE|RRM|REDIRFILE|LOADEXEC|COPY)\\b"
 		},
 		{
 			"name": "keyword.other",
-			"match": "\\b(MATCHES|EQU|NE|FAIL)\\b"
+			"match": "\\b(EQU|NE|FAIL)\\b"
+		},
+		{
+			"match": "(MATCHES)\\s*?(\".*?\")",
+			"captures": {
+				"1": {
+					"name": "keyword.other"
+				},
+				"2": {
+					"name": "string",
+					"patterns": [
+						{
+							"name": "constant.character.escape",
+							"match": "[*?]"
+						},
+						{
+							"name": "variable.name",
+							"match": "\\$.*?\\$"
+						}
+					]
+				}
+			}
 		},
 		{
 			"match": "(-)?([0-9]+)",
@@ -25,17 +57,6 @@
 					"name": "constant.numeric"
 				}
 			}
-		},
-		{
-			"name": "string.quoted.double.pbat",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "variable.name",
-					"match": "\\$.*?\\$"
-				}
-			]
 		},
 		{
 			"name": "variable.name",
