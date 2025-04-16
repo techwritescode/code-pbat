@@ -1,6 +1,7 @@
 {
   "name": "code-pbat",
-  "displayName": "code-pbat",
+  "displayName": "PBAT Language Support",
+  "publisher": "simonhochrein",
   "description": "",
   "version": "0.0.1",
   "engines": {
