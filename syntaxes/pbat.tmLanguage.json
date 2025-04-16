@@ -1,0 +1,50 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "PBAT",
+	"patterns": [
+		{
+			"name": "comment",
+			"begin": "#",
+			"end": "\n"
+		},
+		{
+			"name": "keyword.control.pbat",
+			"match": "\\b(SET|GOTO|RETURN|ADDWIDGET|EXIT|IF|ENDIF|MESSAGE|RRM|REDIRFILE|LOADEXEC|COPY)\\b"
+		},
+		{
+			"name": "keyword.other",
+			"match": "\\b(MATCHES|EQU|NE|FAIL)\\b"
+		},
+		{
+			"match": "(-)?([0-9]+)",
+			"captures": {
+				"1": {
+					"name": "keyword.operator"
+				},
+				"2": {
+					"name": "constant.numeric"
+				}
+			}
+		},
+		{
+			"name": "string.quoted.double.pbat",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "variable.name",
+					"match": "\\$.*?\\$"
+				}
+			]
+		},
+		{
+			"name": "variable.name",
+			"match": "\\$(.*?)\\$"
+		},
+		{
+			"name": "support.function",
+			"match": ":[a-zA-Z_]+\\b"
+		}
+	],
+	"scopeName": "source.pbat"
+}

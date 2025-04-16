@@ -1,0 +1,30 @@
+{
+  "name": "code-pbat",
+  "displayName": "code-pbat",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "icon": "./icons/pbat.png",
+  "contributes": {
+    "languages": [{
+      "id": "pbat",
+      "aliases": ["PBAT", "pbat"],
+      "extensions": [".pbt",".PBT"],
+      "configuration": "./language-configuration.json",
+      "icon": {
+        "dark": "./icons/pbat.svg",
+        "light": "./icons/pbat.svg"
+      }
+    }],
+    "grammars": [{
+      "language": "pbat",
+      "scopeName": "source.pbat",
+      "path": "./syntaxes/pbat.tmLanguage.json"
+    }]
+  }
+}
