@@ -13,8 +13,16 @@
 			"end": "\"",
 			"patterns": [
 				{
+					"name": "constant.character.escape",
+					"match": "[*?]"
+				},
+				{
 					"name": "variable.name",
 					"match": "\\$.*?\\$"
+				},
+				{
+					"name": "constant.character.escape",
+					"match": "\\^."
 				}
 			]
 		},
@@ -24,28 +32,7 @@
 		},
 		{
 			"name": "keyword.other",
-			"match": "\\b(EQU|NE|FAIL)\\b"
-		},
-		{
-			"match": "(MATCHES)\\s*?(\".*?\")",
-			"captures": {
-				"1": {
-					"name": "keyword.other"
-				},
-				"2": {
-					"name": "string",
-					"patterns": [
-						{
-							"name": "constant.character.escape",
-							"match": "[*?]"
-						},
-						{
-							"name": "variable.name",
-							"match": "\\$.*?\\$"
-						}
-					]
-				}
-			}
+			"match": "\\b(EQU|NE|FAIL|MATCHES)\\b"
 		},
 		{
 			"match": "(-)?([0-9]+)",
