@@ -8,6 +8,7 @@ jobs:
             - uses: actions/setup-node@v4
               with:
                 node-version: 22
+            - run: npm install
             - run: npx @vscode/vsce pack -o pbat.vsix
             - uses: actions/upload-artifact@v4
               with:
