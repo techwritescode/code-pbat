@@ -1,34 +1,55 @@
 {
   "name": "code-pbat",
   "displayName": "PBAT Language Support",
-  "publisher": "simonhochrein",
+  "publisher": "techwritescode",
   "description": "",
   "version": "0.0.2",
+  "main": "./out/extension.js",
   "engines": {
     "vscode": "^1.99.0"
   },
   "repository": {
-    "url": "https://github.com/simonhochrein/code-pbat"
+    "url": "https://github.com/techwritescode/code-pbat"
   },
   "categories": [
     "Programming Languages"
   ],
   "icon": "./icons/pbat.png",
   "contributes": {
-    "languages": [{
-      "id": "pbat",
-      "aliases": ["PBAT", "pbat"],
-      "extensions": [".pbt",".PBT"],
-      "configuration": "./language-configuration.json",
-      "icon": {
-        "dark": "./icons/pbat.svg",
-        "light": "./icons/pbat.svg"
+    "languages": [
+      {
+        "id": "pbat",
+        "aliases": [
+          "PBAT",
+          "pbat"
+        ],
+        "extensions": [
+          ".pbt",
+          ".PBT"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "dark": "./icons/pbat.svg",
+          "light": "./icons/pbat.svg"
+        }
       }
-    }],
-    "grammars": [{
-      "language": "pbat",
-      "scopeName": "source.pbat",
-      "path": "./syntaxes/pbat.tmLanguage.json"
-    }]
+    ],
+    "grammars": [
+      {
+        "language": "pbat",
+        "scopeName": "source.pbat",
+        "path": "./syntaxes/pbat.tmLanguage.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.12",
+    "@types/vscode": "^1.99.0",
+    "typescript": "^5.8.3"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
   }
 }
